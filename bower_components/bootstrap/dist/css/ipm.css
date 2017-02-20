@@ -1,0 +1,90 @@
+.nav>li>a {
+  color:#ecf0f1
+}
+.nav>li>a:hover {
+  color:#fff
+}
+.nav>li>a:focus,.nav>li>a:hover {
+  text-decoration:none;
+  background-color:#4449ad
+}
+.navbar-default {
+  background-color: #5966b6;
+  border-color: #4449ad;
+}
+.navbar-default .navbar-brand {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-brand:focus,.navbar-default .navbar-brand:hover {
+  color: #ecdbff;
+}
+.navbar-default .navbar-text {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav>li>a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav>li>a:focus,.navbar-default .navbar-nav>li>a:hover {
+  color: #ecdbff;
+}
+.navbar-default .navbar-nav>.active>a,.navbar-default .navbar-nav>.active>a:focus,.navbar-default .navbar-nav>.active>a:hover {
+  color: #ecdbff;
+  background-color: #4449ad;
+}
+.navbar-default .navbar-toggle {
+  border-color: #4449ad;
+}
+.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover {
+  background-color: #4449ad;
+}
+.navbar-default .navbar-toggle .icon-bar {
+  background-color: #ecf0f1;
+}
+.navbar-default .navbar-collapse,.navbar-default .navbar-form {
+  border-color: #ecf0f1;
+}
+.navbar-default .navbar-nav>.open>a,.navbar-default .navbar-nav>.open>a:focus,.navbar-default .navbar-nav>.open>a:hover {
+  color: #ecdbff;
+  background-color: #4449ad;
+}
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a {
+    color: #ecf0f1;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>li>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>li>a:hover {
+    color: #ecdbff;
+  }
+  .navbar-default .navbar-nav .open .dropdown-menu>.active>a,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:focus,.navbar-default .navbar-nav .open .dropdown-menu>.active>a:hover {
+    color: #ecdbff;
+    background-color: #4449ad;
+  }
+}
+.navbar-default .navbar-link {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-link:hover {
+  color: #ecdbff;
+}
+.navbar-default .navbar-nav>li>.dropdown-menu {
+  background-color: #5966b6;
+}
+.navbar-default .navbar-nav>li>.dropdown-menu>li>a {
+  color: #ecf0f1;
+}
+.navbar-default .navbar-nav>li>.dropdown-menu>li>a:focus,.navbar-default .navbar-nav>li>.dropdown-menu>li>a:hover {
+  color: #ecdbff;
+  background-color: #4449ad;
+}
+.navbar-default .navbar-nav>li>.dropdown-menu>li>.divider {
+  background-color: #5966b6;
+}
+
+
+
+sb-admin-2.css
+body {
+    background-color: #286090;
+}
+.sidebar ul li a.active {
+    background-color: #4449ad;
+}
