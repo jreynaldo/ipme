@@ -21,14 +21,16 @@
         <label>Especificacion:</label>
         <input name="especificacion" type="text" id="especificacion" value="<?= $especificacion; ?>" class="form-control"/>
     </div>
-    <div class="form-group">
-        <label>Base de cotizacion:</label>
-        <label class="form-control">&nbsp;<?= $cantidad_inicial.' '.$unidad_inicial; ?></label>
-    </div>
-    <div class="form-group">
-        <label>Factor de ajuste:</label>
-        <input name="factor_ajuste" type="text" id="factor_ajuste" value="<?= $factor_ajuste; ?>" class="form-control"/>
-    </div>
+    <?php if ($id != FALSE) : ?>
+        <div class="form-group">
+            <label>Base de cotizacion:</label>
+            <label class="form-control">&nbsp;<?= $cantidad_inicial.' '.$unidad_inicial; ?></label>
+        </div>
+        <div class="form-group">
+            <label>Factor de ajuste:</label>
+            <input name="factor_ajuste" type="text" id="factor_ajuste" value="<?= $factor_ajuste; ?>" class="form-control"/>
+        </div>
+    <?php endif; ?>
     <div class="form-group">
         <label>Cantidad a Cotizar:</label>
         <input name="cantidad_a_cotizar" type="text" id="cantidad_a_cotizar" value="<?= $cantidad_a_cotizar; ?>" class="form-control"/>
@@ -43,7 +45,7 @@
     </div>
     <div class="form-group">
         <label>Unid. convencional:</label>
-        <?php $unidades = Array('LIBRA(S)' => 'LIBRA(S)', 'CUARTILLA(S)' => 'CUARTILLA(S)', 'ARROBA(S)' => 'ARROBA(S)', 'QUINTAL(ES)' => 'QUINTAL(ES)', 'MILIGRAMO(S)' => 'MILIGRAMO(S)', 'GRAMO(S)' => 'GRAMO(S)', 'KILOGRAMO(S)' => 'KILOGRAMO(S)', 'TONELADA METRICA' => 'TONELADA METRICA', 'MILILITRO(S)' => 'MILILITRO(S)', 'LITRO(S)' => 'LITRO(S)', 'UNIDAD(ES)' => 'UNIDAD(ES)', 'PAR(ES)' => 'PAR(ES)', 'ROLLO(S)' => 'ROLLO(S)', 'PAQUETITO(S)' => 'PAQUETITO(S)', 'CAJITA(S)' => 'CAJITA(S)', 'METRO(S)' => 'METRO(S)', 'METRO(S)_CUADRADO(S)' => 'METRO(S)_CUADRADO(S)', 'PIE(S) CUADRADO(S)' => 'PIE(S) CUADRADO(S)');
+        <?php $unidades = Array('LIBRA(S)' => 'LIBRA(S)', 'CUARTILLA(S)' => 'CUARTILLA(S)', 'ARROBA(S)' => 'ARROBA(S)', 'QUINTAL(ES)' => 'QUINTAL(ES)', 'MILIGRAMO(S)' => 'MILIGRAMO(S)', 'GRAMO(S)' => 'GRAMO(S)', 'KILOGRAMO(S)' => 'KILOGRAMO(S)', 'TONELADA METRICA' => 'TONELADA METRICA', 'MILILITRO(S)' => 'MILILITRO(S)', 'LITRO(S)' => 'LITRO(S)', 'UNIDAD(ES)' => 'UNIDAD(ES)', 'PAR(ES)' => 'PAR(ES)', 'ROLLO(S)' => 'ROLLO(S)', 'PAQUETITO(S)' => 'PAQUETITO(S)', 'CAJITA(S)' => 'CAJITA(S)', 'METRO(S)' => 'METRO(S)', 'METRO(S)_CUADRADO(S)' => 'METRO(S)_CUADRADO(S)', 'PIE(S) CUADRADO(S)' => 'PIE(S) CUADRADO(S)','JUEGO(S)'=>'JUEGO(S)');
             echo form_dropdown('unidad_convencional', $unidades, $unidad_convencional, 'id="unidad_convencional" class="form-control"');
         ?>
     </div>
@@ -73,12 +75,29 @@
         <label>Procedencia:</label>
         <input name="procedencia" type="text" id="procedencia" value="<?= $procedencia; ?>" class="form-control"/>
     </div>
-    <input name="id_producto_sol" type="hidden" value="<?= $id_producto_sol; ?>"/>
-    <div class="form-group">
-        <label>Justifique:</label>
-        <input name="justificacion" type="text" id="justificacion" value="<?= $justificacion; ?>" class="form-control"/>
+    <?php if ($id != FALSE) : ?>
+        <input name="id" type="hidden" value="<?= $id; ?>"/>
+        <div class="form-group">
+            <label>Justifique:</label>
+            <input name="justificacion" type="text" id="justificacion" class="form-control"/>
+        </div>
+    <?php else : ?>
+        <input name="id_informador" type="hidden" value="<?= $id_informador; ?>"/>
+    <?php endif; ?>
+    <div>
+        <div style="margin-right: 10px; float: left;">
+            <div><b>Imagen Producto</b></div>
+            <div>
+                <img id="img1" src="<?=site_url()?>/Imagen/temp1?id=<?=$id?>" onClick="image(this.id)" style="width: 150px; height: 150px;"/>
+            </div>
+        </div>
+        <div>
+            <div><b>Imagen Envase al Por Mayor</b></div>
+            <div>
+                <img id="img2" src="<?=site_url()?>/Imagen/temp2?id=<?=$id?>" onClick="image(this.id)" style="width: 150px; height: 150px;"/>
+            </div>
+        </div>
     </div>
-    <input name="id_informador" type="hidden" value="<?= $id_informador; ?>"/>
 </form>
 <script type="text/javascript">
     $("#codigo").keydown(function(event){return numero(event);});

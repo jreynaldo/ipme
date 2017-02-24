@@ -36,7 +36,7 @@
                 <div class="col-lg-6">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-calculator"></i> Incidencia Negativa</h3>
+                            <i class="fa fa-calculator"></i> Incidencia Negativa
                         </div>
                         <div class="panel-body">
                             <table class="table table-striped table-bordered table-hover">

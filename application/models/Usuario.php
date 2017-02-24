@@ -81,7 +81,7 @@ class Usuario extends CI_Model {
     }
     
     public function get_usuarios($id_usuario ,$estado,$dep,$s_login,$s_nombre,$s_apellido_p,$s_apellido_m) {
-        $consulta = "SELECT g.id_usuario, g.login,g.activo, g.nombre, g.paterno, g.materno,g.id_departamento,g.descripcion,gp.descripcion grupo
+        $consulta = "SELECT g.id_departamento, g.login,g.id_usuario,g.activo, g.nombre, g.paterno, g.materno,g.descripcion,gp.descripcion grupo
 FROM (SELECT u.id_usuario, u.login, u.activo, u.nombre, u.paterno, u.materno,d.id_departamento,d.descripcion ,u.id_grupo
 FROM seg_usuario u, seg_usuario a, seg_grupo g,cat_departamento d 
 WHERE (u.id_departamento = a.id_departamento and u.id_departamento=d.id_departamento OR a.nacional) 
@@ -97,7 +97,8 @@ where g.id_usuario=us.id_usuario
       AND  UPPER(g.login) LIKE  UPPER(coalesce(?,g.login))
       AND UPPER(g.nombre) like UPPER(coalesce(?,g.nombre))
        AND UPPER(g.paterno) like UPPER(coalesce(?,g.paterno))
-       AND UPPER(g.materno) like UPPER(coalesce(?,g.materno))";
+       AND UPPER(g.materno) like UPPER(coalesce(?,g.materno)) 
+       ORDER BY 1,2";
         $query = $this->db->query($consulta, Array($id_usuario ,$estado,$dep==0 ? NULL : $dep,$s_login."%",$s_nombre."%",$s_apellido_p."%",$s_apellido_m."%"));
   
         return $query->result_array();

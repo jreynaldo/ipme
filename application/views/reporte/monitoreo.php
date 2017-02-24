@@ -109,7 +109,7 @@
                 <div class="col-lg-9">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <i class="fa fa-calendar"></i> Cotizaciones</h3>
+                            <i class="fa fa-calendar"></i> Cotizaciones
                         </div>
                         <div class="panel-body">
                             <div id="productos">

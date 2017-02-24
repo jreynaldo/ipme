@@ -93,7 +93,7 @@
                 <div class="col-lg-12">
                     <div class="panel panel-primary">
                         <div class="panel-heading">
-                            <h4 class="clearfix"><?= $title; ?></h3></h4>
+                            <h4 class="clearfix"><?= $title; ?></h4>
                         </div>
                         <div class="panel-body">
                             <div>
